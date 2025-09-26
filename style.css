@@ -1,0 +1,189 @@
+/* ===== General Page Style ===== */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(120deg, #000000, #330000, #111111);
+  background-size: 600% 600%;
+  animation: gradientShift 15s ease infinite;
+  color: #fff;
+  text-align: center;
+}
+
+a {
+  color: #ff5555;
+  text-decoration: none;
+}
+
+/* ===== Hero Section ===== */
+.hero {
+  position: relative;
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  filter: brightness(50%);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  animation: fadeIn 2s ease forwards;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  color: #ff4444;
+  text-shadow: 2px 2px 5px #000;
+  animation: flicker 3s infinite;
+}
+
+.hero-content p {
+  margin: 10px 0;
+  color: #ddd;
+}
+
+/* ===== CTA Button ===== */
+.cta-btn {
+  margin-top: 20px;
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  background: #900;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+  animation: pulse 2s infinite;
+}
+
+.cta-btn:hover {
+  background: #c00;
+  transform: scale(1.05);
+}
+
+/* ===== Products Section ===== */
+.products {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  padding: 20px;
+}
+
+.product {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #1a1a1a;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.7);
+  transition: transform 0.3s, box-shadow 0.3s, border 0.3s;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.product.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.product:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 20px rgba(255, 0, 0, 0.7);
+  border: 2px solid #ff0000;
+}
+
+.product-info {
+  flex: 1;
+  text-align: left;
+  margin-right: 20px;
+}
+
+.product-info h3 {
+  color: #ff5555;
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  text-shadow: 0 0 10px #ff0000, 0 0 20px #900, 0 0 30px #ff4444;
+  animation: flicker 3s infinite;
+}
+
+.product-info p {
+  line-height: 1.6;
+  color: #ccc;
+}
+
+.product img {
+  width: 200px;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+  border: 2px solid #900;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #ff0000, 0 0 40px #900;
+}
+
+/* ===== Footer ===== */
+footer {
+  background: #111;
+  padding: 20px;
+  border-top: 2px solid #900;
+  font-size: 0.9rem;
+}
+
+/* ===== Animations ===== */
+@keyframes pulse {
+  0% { box-shadow: 0 0 10px #900; }
+  50% { box-shadow: 0 0 25px #ff0000; }
+  100% { box-shadow: 0 0 10px #900; }
+}
+
+@keyframes flicker {
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% { opacity: 1; }
+  20%, 22%, 24%, 55% { opacity: 0.6; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes gradientShift {
+  0% { background-position:0% 50%; }
+  50% { background-position:100% 50%; }
+  100% { background-position:0% 50%; }
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 768px) {
+  .product {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .product-info {
+    margin-right: 0;
+    margin-bottom: 15px;
+  }
+
+  .product img {
+    width: 100%;
+    max-width: 300px;
+  }
+}

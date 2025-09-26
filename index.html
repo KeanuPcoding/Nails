@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lucille Nails - $uicideboy$ Collection</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- ===== Hero Section ===== -->
+  <section class="hero">
+    <video autoplay muted loop class="hero-video">
+      <source src="background.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <div class="hero-content">
+      <h1>$uicideboy$-Inspired Nail Collection</h1>
+      <p>Dark, edgy, and luxurious nails for the bold</p>
+      <button class="cta-btn" onclick="scrollToProducts()">Book Your Style Now</button>
+    </div>
+  </section>
+
+  <!-- ===== Products Section ===== -->
+  <section class="products" id="products">
+
+    <div class="product">
+      <div class="product-info">
+        <h3>Nightmare Shadow</h3>
+        <p>
+          Matte black nails with smoky gray gradients, dark glitter accents, and edgy metallic details. 
+          Inspired by the moody and mysterious vibe of $uicideboy$, perfect for nights out or a bold, 
+          sophisticated everyday look. <strong>Bold. Dark. Unforgettable.</strong>
+        </p>
+      </div>
+      <img src="shadowluxe.jpg" alt="Nightmare Shadow">
+    </div>
+
+    <div class="product">
+      <div class="product-info">
+        <h3>Bloody Diamonds</h3>
+        <p>
+          Deep crimson nails with glossy finish, subtle metallic flecks, and gemstone accents. Bold, 
+          glamorous, and inspired by the dark aesthetic of $uicideboy$, these nails are perfect for 
+          making a statement. <strong>Stand out. Shine darkly.</strong>
+        </p>
+      </div>
+      <img src="bloodruby.jpg" alt="Bloody Diamonds">
+    </div>
+
+    <div class="product">
+      <div class="product-info">
+        <h3>Smoky Abyss</h3>
+        <p>
+          Gradient black-to-gray nails with soft shimmer and gothic accents. Adds depth and sophistication 
+          while keeping a mysterious vibe, ideal for fans of $uicideboy$ dark and moody style. 
+          <strong>Mysterious. Elegant. Edgy.</strong>
+        </p>
+      </div>
+      <img src="smokyabyss.jpg" alt="Smoky Abyss">
+    </div>
+
+    <div class="product">
+      <div class="product-info">
+        <h3>Grave Rose</h3>
+        <p>
+          Dark red/pink smoky marble nails with subtle glitter or metallic veins. Eerie yet elegant, 
+          these nails channel the melancholic, haunting aesthetic of $uicideboy$. 
+          <strong>Romantic. Haunting. Bold.</strong>
+        </p>
+      </div>
+      <img src="graverose.jpg" alt="Grave Rose">
+    </div>
+
+    <div class="product">
+      <div class="product-info">
+        <h3>Violet Sin</h3>
+        <p>
+          Deep purple nails with metallic shimmer and gothic patterns. Vibrant and moody, perfect for 
+          fans of $uicideboy$’s edgy and rebellious vibe who want their nails to make a statement. 
+          <strong>Vibrant. Rebellious. Unique.</strong>
+        </p>
+      </div>
+      <img src="violetsin.jpg" alt="Violet Sin">
+    </div>
+
+    <div class="product">
+      <div class="product-info">
+        <h3>Gold Chains</h3>
+        <p>
+          Black nails with gold foil or glitter accents, inspired by hip-hop bling with a dark twist. 
+          Elegant, bold, and perfect for a luxurious $uicideboy$-inspired aesthetic that mixes glamour 
+          with edge. <strong>Luxury. Dark. Iconic.</strong>
+        </p>
+      </div>
+      <img src="goldchains.jpg" alt="Gold Chains">
+    </div>
+
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <footer>
+    <p>Follow us on Instagram: <a href="#" target="_blank">@LucilleNails</a></p>
+    <p>Contact/Book: <a href="mailto:lucillenails@example.com">lucillenails@example.com</a></p>
+  </footer>
+
+  <script>
+    function scrollToProducts() {
+      document.getElementById('products').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // ===== Scroll animation for products =====
+    const products = document.querySelectorAll('.product');
+    window.addEventListener('scroll', () => {
+      products.forEach(product => {
+        const rect = product.getBoundingClientRect();
+        if(rect.top < window.innerHeight - 100) {
+          product.classList.add('visible');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
